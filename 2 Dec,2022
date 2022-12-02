@@ -1,0 +1,54 @@
+//1657. Determine if Two Strings Are Close
+//C++
+
+class Solution {
+public:
+    bool closeStrings(string word1, string word2) {
+        if(word1.size()!=word2.size())
+            return false;
+        int i,c=0;
+        map<char,int>m1;
+        map<char,int>m2;
+        for(i=0;i<word1.size();i++)
+            m1[word1[i]]++;
+        for(i=0;i<word2.size();i++)
+            m2[word2[i]]++;
+        
+        int A[m1.size()],B[m1.size()],C[m1.size()];
+        int j=0;
+        for(auto i:m1)
+        {
+            C[j]=i.first;
+            j++;
+        }
+        j=0;
+        for(auto i:m1)
+        {
+            A[j]=i.second;
+            j++;
+        }
+        j=0;
+        for(auto i:m2)
+        {
+            B[j]=i.second;
+            j++;
+        }
+        sort(A,A+j);
+        sort(B,B+j);
+        for(i=0;i<m1.size();i++)
+        {
+            if(m2[C[i]]==0)
+                c++;
+        }
+        for(i=0;i<m1.size();i++)
+        {
+            if(A[i]!=B[i])
+                c++;
+        }
+        if(c!=0)
+            return false;
+        return true;
+    }
+};
+
+https://leetcode.com/problems/determine-if-two-strings-are-close/
