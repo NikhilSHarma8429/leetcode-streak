@@ -1,0 +1,43 @@
+//451. Sort Characters By Frequency
+//c++
+
+class Solution {
+public:
+    string frequencySort(string s) {
+        map<char,int>m;
+        int i,j;
+        for(i=0;i<s.size();i++)
+            m[s[i]]++;
+        char ss[s.size()];
+        int k=0,max=0,t=0;
+        for(auto i:m){
+            for(auto j:m)
+            {
+                if(j.second>max)
+                    max=j.second;
+            }
+            for(auto j:m)
+            {
+                if(j.second==0)
+                    continue;
+                if(max==j.second)
+                {
+                    for(k=0;k<j.second;k++)
+                    {
+                        ss[t]=j.first;
+                        t++;
+                    }
+                    m[j.first]=0;
+                    max=0;
+                }
+            }
+        }
+        for(i=0;i<s.size();i++)
+        {
+            s[i]=ss[i];
+        }
+        return s;
+    }
+};
+
+//https://leetcode.com/problems/sort-characters-by-frequency/
