@@ -1,0 +1,48 @@
+//2256. Minimum Average Difference
+//C++
+
+class Solution {
+public:
+    int minimumAverageDifference(vector<int>& nums) {
+        int i,j=0,k,l,t;
+        long long int sum=0,sum1=INT_MAX,s;
+        l=nums.size();
+        cout<<l;
+        vector <long long> A(l,0);
+        vector <long long> B(l,0);
+        for(i=0;i<nums.size();i++)
+        {
+            sum=sum+nums[i];
+            A[i]=sum;
+        }
+        sum=0;
+        for(i=(nums.size()-1);i>0;i--)
+        {
+            sum=sum+nums[i];
+            B[i-1]=sum;
+        }
+        B[(nums.size()-1)]=0;
+        sum=0;
+        for(i=0;i<nums.size();i++)
+        {
+            t=i+1;
+            if((l-t) !=0)
+            {
+                sum=A[i]/t;
+                s=B[i]/(l-t);
+                sum=sum-s;  
+                sum=abs(sum);
+            }
+            else
+                sum=A[i]/t;
+            if(sum<sum1){
+                sum1=sum;
+                j=i;
+            }
+            sum=0;
+        }
+        return j;
+    }
+};
+
+//https://leetcode.com/problems/minimum-average-difference/
