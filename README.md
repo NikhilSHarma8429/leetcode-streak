@@ -14,3 +14,6 @@
 
 5.Middle of the Linked List
 >https://leetcode.com/problems/middle-of-the-linked-list/
+
+6.Odd Even Linked List
+>https://leetcode.com/problems/odd-even-linked-list/description/
