@@ -1,0 +1,35 @@
+//328. Odd Even Linked List
+//C++
+
+
+class Solution {
+public:
+    ListNode* oddEvenList(ListNode* head) {
+        if(head==NULL|| head->next==NULL)
+        return head;
+        ListNode* ptr=head;
+        ListNode* pr=head->next;
+        ListNode* pt=ptr;
+        ListNode* pointer=pr;
+    while(pointer)
+    {
+        if(pointer->next)
+        {
+            pt->next=pointer->next;
+        }
+        else
+        {
+        pt->next=pr;
+        return ptr;
+        }
+        pt=pt->next;
+        pointer->next=pt->next;
+        pointer=pointer->next;
+
+    }
+    pt->next=pr;
+    return ptr;
+    }
+};
+
+https://leetcode.com/problems/odd-even-linked-list/description/
