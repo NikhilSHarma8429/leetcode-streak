@@ -17,3 +17,6 @@
 
 6.Odd Even Linked List
 >https://leetcode.com/problems/odd-even-linked-list/description/
+
+7.Range Sum of BST
+>https://leetcode.com/problems/range-sum-of-bst/
