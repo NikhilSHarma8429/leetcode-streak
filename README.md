@@ -20,3 +20,6 @@
 
 7.Range Sum of BST
 >https://leetcode.com/problems/range-sum-of-bst/
+
+8.Leaf-Similar Trees
+>https://leetcode.com/problems/leaf-similar-trees/
