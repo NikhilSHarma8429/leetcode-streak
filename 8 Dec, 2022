@@ -1,0 +1,35 @@
+// 872. Leaf-Similar Trees
+// c++
+
+class Solution {
+public:
+   void yo(TreeNode* root1,vector<int>& A)
+        {
+            
+            if(root1!=NULL)
+            {
+                if(root1->left==NULL && root1->right==NULL)
+                    A.push_back(root1->val);
+                yo(root1->left,A);
+                yo(root1->right,A);
+            }
+            
+        }
+    bool leafSimilar(TreeNode* root1, TreeNode* root2) {
+        vector<int>A;
+        vector<int>B;
+        int i;
+        yo(root1,A);
+        yo(root2,B);
+        if(A.size()!=B.size())
+            return false;
+        for(i=0;i<A.size();i++)
+        {
+            if(A[i]!=B[i])
+                return false;
+        }
+        return true;
+    }
+};
+
+https://leetcode.com/problems/leaf-similar-trees/
