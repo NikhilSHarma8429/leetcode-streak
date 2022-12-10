@@ -23,3 +23,9 @@
 
 8.Leaf-Similar Trees
 >https://leetcode.com/problems/leaf-similar-trees/
+
+9.Maximum Difference Between Node and Ancestor
+>https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/
+
+10.Maximum Product of Splitted Binary Tree.
+>https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
